@@ -3,6 +3,7 @@ import {StyleSheet, View, Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Feed from './Feed';
 
+
 const Tab = createBottomTabNavigator()
 
 function BottomNavBar() {

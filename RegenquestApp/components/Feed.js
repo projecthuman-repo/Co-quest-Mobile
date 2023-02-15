@@ -1,22 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import NewPost from './NewPost';
 
+const Feed = ({ navigation }) => {
+    // Initialize const variables
 
-function Feed() {
     const [searchQuery, setSearchQuery] = useState('');
     // const [posts, setPosts] = useState([]);
     // const [loading, setLoading] = useState(true);
 
-    const handleSearch = (query) => {
+    const handleSearch = (query) => { 
         setSearchQuery(query); // Set the search input the useState variable
     };
     
-    const handleButtonPress = () => {
-        console.log('Button pressed');
-        
+    const handleButtonPress = () => { // const to handle the "New Post" action
+        console.log('New Post button pressed');
+        navigation.navigate('NewPost') // Navigates to the NewPost.js component
       };
 
+    
     /*
     useEffect(() => {
         async function fetchData() {
