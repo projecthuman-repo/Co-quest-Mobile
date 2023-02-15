@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import BottomNavBar from './components/NavBar';
 import { NavigationContainer } from '@react-navigation/native';
 
+
 export default function App() {
   return (
     <NavigationContainer>

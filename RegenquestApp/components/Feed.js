@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, TextInput } from 'react-native';
-
+import { View, Text, TextInput, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 function Feed() {
@@ -9,9 +9,14 @@ function Feed() {
     // const [loading, setLoading] = useState(true);
 
     const handleSearch = (query) => {
-        setSearchQuery(query) // Set the search input the useState variable
+        setSearchQuery(query); // Set the search input the useState variable
     };
     
+    const handleButtonPress = () => {
+        console.log('Button pressed');
+        
+      };
+
     /*
     useEffect(() => {
         async function fetchData() {
@@ -33,16 +38,20 @@ function Feed() {
 
     return ( 
         <View>
-            <TextInput
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin: 10 }}
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <TextInput
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin: 10, flex: 1 }}
                 placeholder="Search"
                 onChangeText={handleSearch}
-                value={searchQuery} /* Specific styling can be added to a css file */
-            />
-            <Text>
-                This is the Feed Section
-            </Text>
+                value={searchQuery}
+                />
+                <Button title="New Post" onPress={handleButtonPress} style={{ marginRight: 10 }} />
         </View>
+        <Text>
+            This is the feed section
+        </Text>
+      </View>
+
      );
 }
 
