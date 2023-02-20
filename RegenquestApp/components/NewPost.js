@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, Platform } from 'react-native'
 import { IconButton } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import DropDownPicker from 'react-native-dropdown-picker';
+import * as ImagePicker from 'expo-image-picker';
+
 
 export default function NewPost() {
   // Initialize const variables
@@ -15,10 +17,25 @@ export default function NewPost() {
   ])
   const [value, setValue] = useState(null);
 
+  const [image, setImage] = useState(null);
+  const launchGallery = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: false,
+      allowsMultipleSelection: true,
+      aspect: [4,3],
+      quality: 1,
+    });
 
-  fetch('https://backend-api/userprofile-information', {
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
+
+
+  /*fetch('https://backend-api/userprofile-information', {
     method: 'GET'
-  })
+  }) */
 
   return (
     <View>
@@ -36,7 +53,7 @@ export default function NewPost() {
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <IconButton icon={props => <Icon name="camera" {...props} />} />
+        <IconButton icon={props => <Icon name="camera" {...props} />} onPress={launchGallery}/>
         <IconButton icon={props => <Icon name="microphone" {...props} />} />
         <IconButton icon={props => <Icon name="account-multiple-plus" {...props} />} />
         <IconButton icon={props => <Icon name="map" {...props} />} />
@@ -52,7 +69,8 @@ export default function NewPost() {
           setOpen={setOpen}
           setValue={setValue}
           setLayers={setLayers}
-          containerStyle={{ height: 40, width: 350, zIndex: 1 }}>
+          containerStyle={{ height: 40, width: 350, zIndex: 1 }}
+          placeholder="Select a layer">
 
         </DropDownPicker>
       </View>
