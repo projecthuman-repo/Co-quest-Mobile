@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import NewPost from './NewPost';
-
+import Post from './Post'
 const Feed = ({ navigation }) => {
     // Initialize const variables
 
@@ -54,6 +54,12 @@ const Feed = ({ navigation }) => {
         <Text>
             This is the feed section
         </Text>
+        <Post
+          
+          username="micheal"
+        >
+
+        </Post>
       </View>
 
      );
