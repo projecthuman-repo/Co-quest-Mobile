@@ -12,7 +12,7 @@ function PhoneOptIn({ navigation }) {
 
     const handleBack = handlePress('Signup', navigation)
     const handleSkip = handlePress('Login', navigation)
-    const handleContinue = handlePress('Login', navigation)
+    const handleContinue = handlePress('Code', navigation)
 
     const [phoneNumber, setPhoneNumber] = useState('');
 

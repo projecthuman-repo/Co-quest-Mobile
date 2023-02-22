@@ -8,6 +8,7 @@ import Signup from './screens/Signup';
 import PhoneVerification from './screens/PhoneVerification';
 import EmailVertification from './screens/EmailVertification';
 import PhoneOptIn from './screens/2FAOptIn';
+import OptInCode from './screens/OptInCode';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ export default function App() {
         <Stack.Screen name="2Fa" component={PhoneVerification}></Stack.Screen>
         <Stack.Screen name="Confirmation" component={EmailVertification}></Stack.Screen>
         <Stack.Screen name="PhoneOptIn" component={PhoneOptIn}></Stack.Screen>
+        <Stack.Screen name="Code" component={OptInCode}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
