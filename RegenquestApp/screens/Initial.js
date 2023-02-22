@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import styles from '../components/styles';
 import Button from '../components/Button';
 
 function Initial({ navigation }) {
@@ -14,9 +15,9 @@ function Initial({ navigation }) {
 
 
     return (
-        <View id="login" style={styles.container}>
+        <View id="login" style={custom.container}>
             <View style={styles.content}>
-                <Text style={styles.heading}>Lorem Ipsum Marketing Tagline Here</Text>
+                <Text style={styles.tagline}>Lorem Ipsum Marketing Tagline Here</Text>
                 <View style={styles.buttonContainer}>
                     <Button title="Login" color="#26A5E7" textColor="white" onPress={handleLoginPress} />
                     <Button title="Signup" color="#C7C9CB" textColor="black" onPress={handleSignupPress} />
@@ -27,7 +28,7 @@ function Initial({ navigation }) {
     );
 }
 
-const styles = StyleSheet.create({
+const custom = StyleSheet.create({
     container: {
         display: 'flex',
         flex: 1,
@@ -35,20 +36,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        backgroundColor: '#CBCBCB'
     },
-    content: {
-        backgroundColor: '#FFFFFF',
-        padding: '13%',
-        width: '100%',
-    },
-
-    heading: {
-        textAlign: 'center',
-        fontSize: 20,
-        marginBottom: 20,
-    },
-
 });
 
 export default Initial;
