@@ -6,6 +6,7 @@ import Button from '../components/Button'
 import { Icon } from "@expo/vector-icons/MaterialCommunityIcons";
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/styles';
+import handlePress from '../components/handlePress';
 
 
 function Login({ navigation }) {
@@ -14,13 +15,8 @@ function Login({ navigation }) {
 
     const [password, setPassword] = useState('');
 
-    const handleSignupPress = useCallback(() => {
-        navigation.navigate('Signup');
-    }, [navigation]);
-
-    const handlePress = useCallback(() => {
-        navigation.navigate('2Fa');
-    }, [navigation]);
+    const handleSignupPress = handlePress('Signup', navigation);
+    const handleNext = handlePress('2Fa', navigation);
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{ flex: 1 }}>
@@ -77,7 +73,7 @@ function Login({ navigation }) {
                             </TouchableOpacity>
                         </View>
 
-                        <Button title="Login" color="#26A5E7" textColor="white" onPress={handlePress} />
+                        <Button title="Login" color="#26A5E7" textColor="white" onPress={handleNext} />
                         <Button title="No account? Sign up" color="none" textColor="#000000" onPress={handleSignupPress} />
                     </KeyboardAvoidingView>
                 </View>

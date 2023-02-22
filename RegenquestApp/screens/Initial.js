@@ -2,16 +2,12 @@ import React, { useCallback } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import styles from '../components/styles';
 import Button from '../components/Button';
+import handlePress from '../components/handlePress';
 
 function Initial({ navigation }) {
 
-    const handleLoginPress = useCallback(() => {
-        navigation.navigate('Login');
-    }, [navigation]);
-
-    const handleSignupPress = useCallback(() => {
-        navigation.navigate('Signup');
-    }, [navigation]);
+    const handleLoginPress = handlePress('Login', navigation);
+    const handleSignUpPress = handlePress('Signup', navigation);
 
 
     return (
@@ -20,7 +16,7 @@ function Initial({ navigation }) {
                 <Text style={styles.tagline}>Lorem Ipsum Marketing Tagline Here</Text>
 
                 <Button title="Login" color="#26A5E7" textColor="white" onPress={handleLoginPress} />
-                <Button title="Signup" color="#C7C9CB" textColor="black" onPress={handleSignupPress} />
+                <Button title="Sign Up" color="#C7C9CB" textColor="black" onPress={handleSignUpPress} />
 
 
             </View>

@@ -6,6 +6,8 @@ import Initial from './screens/Initial';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import PhoneVerification from './screens/PhoneVerification';
+import EmailVertification from './screens/EmailVertification';
+import PhoneOptIn from './screens/2FAOptIn';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,8 @@ export default function App() {
         <Stack.Screen name="Signup" component={Signup}></Stack.Screen>
         <Stack.Screen name="Login" component={Login}></Stack.Screen>
         <Stack.Screen name="2Fa" component={PhoneVerification}></Stack.Screen>
+        <Stack.Screen name="Confirmation" component={EmailVertification}></Stack.Screen>
+        <Stack.Screen name="PhoneOptIn" component={PhoneOptIn}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

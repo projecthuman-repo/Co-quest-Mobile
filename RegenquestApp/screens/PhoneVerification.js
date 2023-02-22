@@ -6,6 +6,7 @@ import { TextInput } from "@react-native-material/core";
 import styles from '../components/styles';
 import Button from '../components/Button'
 import { Ionicons } from '@expo/vector-icons';
+import handlePress from '../components/handlePress';
 
 
 // let system = new System();
@@ -27,16 +28,11 @@ function PhoneVerification({ navigation }) {
 
     function handleContinue() {
         // handle continue button press
+        // would take you to the feed! backend auth would be required also lol
     }
 
-    const handleBack = useCallback(() => {
-        navigation.navigate('Login');
-    }, [navigation]);
-
-    const handleSignupPress = useCallback(() => {
-        navigation.navigate('Signup');
-    }, [navigation]);
-
+    const handleBack = handlePress('Login', navigation);
+    const handleSignUpPress = handlePress('Signup', navigation);
 
     return (
 
@@ -54,7 +50,7 @@ function PhoneVerification({ navigation }) {
                                 onChangeText={newText => setCode(newText)}
                                 defaultValue={code}>
                             </TextInput>
-                            <TouchableOpacity onPress={handleSignupPress}>
+                            <TouchableOpacity onPress={handleSignUpPress}>
                                 <Text style={{ fontWeight: '600', textAlign: 'center', marginTop: '5%' }}>Didn't get a code?</Text>
                             </TouchableOpacity>
                         </View>
