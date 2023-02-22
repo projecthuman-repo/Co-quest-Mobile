@@ -12,20 +12,14 @@ function Initial({ navigation }) {
         navigation.navigate('Signup');
     }, [navigation]);
 
-    const buttonStyles = {
-        borderRadius: 20,
-        padding: 10,
-        marginBottom: 10,
-        minWidth: 150,
-    };
 
     return (
         <View id="login" style={styles.container}>
             <View style={styles.content}>
                 <Text style={styles.heading}>Lorem Ipsum Marketing Tagline Here</Text>
                 <View style={styles.buttonContainer}>
-                    <Button title="Login" color="#26A5E7" textColor="white" onPress={() => navigation.navigate('Login')} />
-                    <Button title="Signup" color="#C7C9CB" textColor="black" onPress={() => navigation.navigate('Signup')} />
+                    <Button title="Login" color="#26A5E7" textColor="white" onPress={handleLoginPress} />
+                    <Button title="Signup" color="#C7C9CB" textColor="black" onPress={handleSignupPress} />
 
                 </View>
             </View>
