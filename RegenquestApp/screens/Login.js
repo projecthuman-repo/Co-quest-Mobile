@@ -8,55 +8,33 @@ import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/styles';
 
 
-function Signup({ navigation }) {
-
-    const [fullName, setFullName] = useState('');
+function Login({ navigation }) {
 
     const [email, setEmail] = useState('');
 
     const [password, setPassword] = useState('');
 
-    const [username, setUsername] = useState('');
-
-    const handleLoginPress = useCallback(() => {
-        navigation.navigate('Login');
+    const handleSignupPress = useCallback(() => {
+        navigation.navigate('Signup');
     }, [navigation]);
-
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{ flex: 1 }}>
             <View id="register" style={[styles.container]}>
-                <View style={{ width: '90%' }}>
+                <View style={{ width: '80%' }}>
                     <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={50}>
 
 
-                        <Text style={styles.heading}>Sign up with your Project: Human City account</Text>
+                        <Text style={styles.heading}>Login with your Project: Human City account</Text>
 
 
                         <View style={[styles.inputContainer]}>
-                            <TextInput style={[styles.input]}
-                                label="Full Name"
-                                variant="outlined" type="text" id='name'
-                                onChangeText={newText => setFullName(newText)}
-                                color={'#000000'}
-                                defaultValue={fullName}>
-                            </TextInput>
                             <TextInput
                                 label='Email Address'
                                 variant="outlined" style={styles.input}
                                 color={'#000000'} type="text" id='email'
                                 onChangeText={newText => setEmail(newText)}
                                 defaultValue={email}
-                            ></TextInput>
-                            <TextInput
-                                label='Username'
-                                variant="outlined"
-                                style={styles.input}
-                                type="text"
-                                id='username'
-                                color={'#000000'}
-                                onChangeText={newText => setUsername(newText)}
-                                defaultValue={username}
                             ></TextInput>
                             <TextInput
                                 label='Password'
@@ -95,9 +73,8 @@ function Signup({ navigation }) {
                             </TouchableOpacity>
                         </View>
 
-                        <Button title="Signup" color="#26A5E7" textColor="white" />
-
-                        <Button title="Have an account? Login" color="none" textColor="#000000" onPress={handleLoginPress} />
+                        <Button title="Login" color="#26A5E7" textColor="white" />
+                        <Button title="No account? Sign up" color="none" textColor="#000000" onPress={handleSignupPress} />
                     </KeyboardAvoidingView>
                 </View>
             </View >
@@ -108,4 +85,4 @@ function Signup({ navigation }) {
 
 
 
-export default Signup;
+export default Login;

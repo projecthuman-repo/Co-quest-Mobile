@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         padding: 10,
         marginBottom: 10,
-        minWidth: 150,
+        minWidth: "85%",
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.25,

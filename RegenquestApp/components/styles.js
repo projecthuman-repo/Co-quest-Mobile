@@ -43,7 +43,7 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
         marginHorizontal: 10,
         marginVertical: 10,
-        width: window.width - 40,
+        width: '95%',
     },
 
     iconContainer: {
