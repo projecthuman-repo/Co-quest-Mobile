@@ -1,7 +1,7 @@
 
 import { View, Text, keyboardVerticalOffset, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 import { IconButton, TextInput } from "@react-native-material/core";
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button'
 import { Icon } from "@expo/vector-icons/MaterialCommunityIcons";
 import { FontAwesome } from '@expo/vector-icons';

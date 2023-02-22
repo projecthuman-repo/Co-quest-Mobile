@@ -1,14 +1,10 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 
 
-import { View, Text, Keyboard, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
-import { TextInput } from "@react-native-material/core";
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../components/styles';
 import handlePress from '../components/handlePress';
 import { Ionicons } from '@expo/vector-icons';
-
-
-// let system = new System();
 
 
 function EmailVertification({ navigation }) {
@@ -41,6 +37,8 @@ function EmailVertification({ navigation }) {
         // handle continue button press
         // would take you to the feed! backend auth would be required also lol
     }
+
+    // it should only work if the email actually was verified! (back-end magic here lol)
 
     const handleBack = handlePress('PhoneOptIn', navigation);
     const handleNoCode = handlePress('PhoneOptIn', navigation);

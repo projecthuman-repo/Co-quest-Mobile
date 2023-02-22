@@ -21,7 +21,7 @@ function Signup({ navigation }) {
 
 
     const handleLoginPress = handlePress('Login', navigation);
-    const handleSignUpPress = handlePress('Signup', navigation);
+    const handleSignUpPress = handlePress('Confirmation', navigation);
 
 
     return (
@@ -96,7 +96,7 @@ function Signup({ navigation }) {
                             </TouchableOpacity>
                         </View>
 
-                        <Button title="Signup" color="#26A5E7" textColor="white" onPress={handleSignUpPress} />
+                        <Button title="Sign Up" color="#26A5E7" textColor="white" onPress={handleSignUpPress} />
 
                         <Button title="Have an account? Login" color="none" textColor="#000000" onPress={handleLoginPress} />
                     </KeyboardAvoidingView>

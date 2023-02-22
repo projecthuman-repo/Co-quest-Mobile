@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 
 
 import { View, Text, Keyboard, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
@@ -7,9 +7,6 @@ import styles from '../components/styles';
 import Button from '../components/Button'
 import { Ionicons } from '@expo/vector-icons';
 import handlePress from '../components/handlePress';
-
-
-// let system = new System();
 
 
 function PhoneVerification({ navigation }) {
@@ -48,7 +45,9 @@ function PhoneVerification({ navigation }) {
                                 id='code' label='6-digit code'
                                 color={'#000000'}
                                 onChangeText={newText => setCode(newText)}
-                                defaultValue={code}>
+                                defaultValue={code}
+                                InputLabelProps={{ shrink: true }}
+                            >
                             </TextInput>
                             <TouchableOpacity onPress={handleSignUpPress}>
                                 <Text style={{ fontWeight: '600', textAlign: 'center', marginTop: '5%' }}>Didn't get a code?</Text>
