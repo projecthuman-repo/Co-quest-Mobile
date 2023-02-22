@@ -1,8 +1,6 @@
 import React, { useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import BlueBotton from '../components/blueButton';
-import GreyBotton from '../components/greyButton';
-
+import Button from '../components/Button';
 
 function Initial({ navigation }) {
 
@@ -26,8 +24,8 @@ function Initial({ navigation }) {
             <View style={styles.content}>
                 <Text style={styles.heading}>Lorem Ipsum Marketing Tagline Here</Text>
                 <View style={styles.buttonContainer}>
-                    <BlueBotton title="Login" onPress={() => navigation.navigate('Login')} />
-                    <GreyBotton title="Signup" onPress={() => navigation.navigate('Signup')} />
+                    <Button title="Login" color="#26A5E7" textColor="white" onPress={() => navigation.navigate('Login')} />
+                    <Button title="Signup" color="#C7C9CB" textColor="black" onPress={() => navigation.navigate('Signup')} />
 
                 </View>
             </View>
@@ -47,9 +45,10 @@ const styles = StyleSheet.create({
     },
     content: {
         backgroundColor: '#FFFFFF',
-        padding: '10%',
+        padding: '13%',
         width: '100%',
     },
+
     heading: {
         textAlign: 'center',
         fontSize: 20,
