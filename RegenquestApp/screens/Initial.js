@@ -18,11 +18,11 @@ function Initial({ navigation }) {
         <View id="login" style={custom.container}>
             <View style={styles.content}>
                 <Text style={styles.tagline}>Lorem Ipsum Marketing Tagline Here</Text>
-                <View style={styles.buttonContainer}>
-                    <Button title="Login" color="#26A5E7" textColor="white" onPress={handleLoginPress} />
-                    <Button title="Signup" color="#C7C9CB" textColor="black" onPress={handleSignupPress} />
 
-                </View>
+                <Button title="Login" color="#26A5E7" textColor="white" onPress={handleLoginPress} />
+                <Button title="Signup" color="#C7C9CB" textColor="black" onPress={handleSignupPress} />
+
+
             </View>
         </View >
     );

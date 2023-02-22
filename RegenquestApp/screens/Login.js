@@ -18,6 +18,10 @@ function Login({ navigation }) {
         navigation.navigate('Signup');
     }, [navigation]);
 
+    const handlePress = useCallback(() => {
+        navigation.navigate('2Fa');
+    }, [navigation]);
+
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{ flex: 1 }}>
             <View id="register" style={[styles.container]}>
@@ -73,7 +77,7 @@ function Login({ navigation }) {
                             </TouchableOpacity>
                         </View>
 
-                        <Button title="Login" color="#26A5E7" textColor="white" />
+                        <Button title="Login" color="#26A5E7" textColor="white" onPress={handlePress} />
                         <Button title="No account? Sign up" color="none" textColor="#000000" onPress={handleSignupPress} />
                     </KeyboardAvoidingView>
                 </View>

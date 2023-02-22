@@ -58,4 +58,18 @@ export default StyleSheet.create({
         width: 30,
         height: 30,
     },
+
+    subtext: {
+        textAlign: 'center',
+        padding: '5%',
+    },
+
+    buttonContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+
+    back: {
+        fontSize: 16,
+    },
 });
