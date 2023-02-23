@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import NewPost from './NewPost';
 import Post from './Post'
 import postImage from '../assets/postImage1.png';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 const Feed = ({ navigation }) => {
@@ -78,15 +79,17 @@ const Feed = ({ navigation }) => {
         <Text>
             This is the feed section
         </Text>
-        <Post
-          id={post.id}
-          username={post.username}
-          profilePicture={post.profilePicture}
-          photos={post.photos}
-          likes={post.likes}
-          comments={post.comments}
-        >
-        </Post>
+        <ScrollView>
+          <Post
+            id={post.id}
+            username={post.username}
+            profilePicture={post.profilePicture}
+            photos={post.photos}
+            likes={post.likes}
+            comments={post.comments}
+          >
+          </Post>
+        </ScrollView>
       </View>
 
      );
