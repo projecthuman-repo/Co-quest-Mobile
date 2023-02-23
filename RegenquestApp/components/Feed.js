@@ -4,6 +4,9 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import NewPost from './NewPost';
 import Post from './Post'
+import postImage from '../assets/postImage1.png';
+
+
 const Feed = ({ navigation }) => {
     // Initialize const variables
 
@@ -19,6 +22,27 @@ const Feed = ({ navigation }) => {
         console.log('New Post button pressed');
         navigation.navigate('NewPost') // Navigates to the NewPost.js component
       };
+
+
+    const post = {
+      id: 1,
+      username: 'johndoe',
+      profilePicture: postImage,
+      photos: [postImage],
+      likes: 10,
+      comments: [
+        {
+          id: 1,
+          username: 'janedoe',
+          text: 'This is an awesome post!',
+        },
+        {
+          id: 2,
+          username: 'bobsmith',
+          text: 'I love this!',
+        },
+      ],
+    };
 
     
     /*
@@ -55,10 +79,13 @@ const Feed = ({ navigation }) => {
             This is the feed section
         </Text>
         <Post
-          
-          username="micheal"
+          id={post.id}
+          username={post.username}
+          profilePicture={post.profilePicture}
+          photos={post.photos}
+          likes={post.likes}
+          comments={post.comments}
         >
-
         </Post>
       </View>
 
