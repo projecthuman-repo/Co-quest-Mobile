@@ -12,7 +12,7 @@ import { FontAwesome } from '@expo/vector-icons';
 function ConnectSocial({ navigation }) {
 
     const handleBack = handlePress('Login', navigation);
-    const handleSkip = handlePress('Login', navigation);
+    const handleSkip = handlePress('PFP', navigation);
 
     return (
 

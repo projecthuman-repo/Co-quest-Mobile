@@ -21,7 +21,7 @@ function Bio({ navigation }) {
 
     const handleContinue = handlePress("Connect", navigation);
     const handleBack = handlePress('Signup', navigation);
-    const handleSkip = handlePress('Login', navigation);
+    const handleSkip = handlePress('PFP', navigation);
 
     return (
 
