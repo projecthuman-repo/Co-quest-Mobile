@@ -11,7 +11,7 @@ function Initial({ navigation }) {
 
 
     return (
-        <View id="login" style={custom.container}>
+        <View style={custom.container}>
             <View style={styles.content}>
                 <Text style={styles.tagline}>Lorem Ipsum Marketing Tagline Here</Text>
 

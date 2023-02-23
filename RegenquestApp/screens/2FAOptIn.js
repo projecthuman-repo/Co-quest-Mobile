@@ -18,7 +18,7 @@ function PhoneOptIn({ navigation }) {
 
 
     return (
-        <View id="login" style={[styles.container]}>
+        <View style={[styles.container]}>
             <View style={{ flex: 1, width: '87%', }}>
                 <View style={[styles.buttonContainer, { justifyContent: 'center', marginVertical: '25%' }]}>
                     <Ionicons name="checkmark-circle" size={24} color="#46B85F" />

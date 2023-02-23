@@ -23,13 +23,13 @@ function OptInCode({ navigation }) {
 
     const [code, setCode] = useState('');
 
-    const handleContinue = handlePress('Signup', navigation);
+    const handleContinue = handlePress('Bio', navigation);
     const handleBack = handlePress('Login', navigation);
 
     return (
 
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{ flex: 1 }}>
-            <View id="login" style={[styles.container]}>
+            <View style={[styles.container]}>
 
                 <View style={{ flex: 1, width: '90%', }}>
                     <View style={{ flex: 2, justifyContent: 'center', padding: '4%', marginTop: '30%', }}>

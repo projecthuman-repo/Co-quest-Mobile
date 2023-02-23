@@ -45,7 +45,7 @@ function EmailVertification({ navigation }) {
 
 
     return (
-        <View id="login" style={[styles.container]}>
+        <View style={[styles.container]}>
             <View style={{ flex: 1, width: '90%', }}>
                 <View style={{ flex: 2, justifyContent: 'center', padding: '4%', marginTop: '30%', }}>
                     <Text style={[styles.heading]}>Verify your account</Text>

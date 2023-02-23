@@ -3,7 +3,7 @@ import { View, Text, keyboardVerticalOffset, Keyboard, KeyboardAvoidingView, Tou
 import { IconButton, TextInput } from "@react-native-material/core";
 import React, { useState } from 'react'
 import Button from '../components/Button'
-import { Icon } from "@expo/vector-icons/MaterialCommunityIcons";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/styles';
 import handlePress from '../components/handlePress';
@@ -20,7 +20,7 @@ function Login({ navigation }) {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{ flex: 1 }}>
-            <View id="register" style={[styles.container]}>
+            <View style={[styles.container]}>
                 <View style={{ width: '80%' }}>
                     <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={50}>
 
@@ -46,9 +46,9 @@ function Login({ navigation }) {
                                 color={'#000000'}
                                 onChangeText={newText => setPassword(newText)}
                                 defaultValue={password}
-                            // trailing={props => (
-                            //     <IconButton icon={props => <Icon name="eye" {...props} />} {...props} />
-                            // )}
+                                trailing={props => (
+                                    <IconButton icon={props => <Icon name="eye" {...props} />} {...props} />
+                                )}
                             ></TextInput>
 
                         </View>
