@@ -1,10 +1,36 @@
 // The view/component of a singular post on the user feed
+import { IconButton } from '@react-native-material/core';
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import CommentsView from './Comments';
 
-export default function Post({ profilePic, username, photos, likes }) {
+
+export default function Post({ profilePic, username, photos, likes, navigation }) {
   const [showComments, setShowComments] = useState(false);
   const comments = ['Comment 1', 'Comment 2', 'Comment 3'];
+  const [numLikes, setNumLikes] = useState(likes); // Stores and sets the number of likes shown on the post from <likes> arguement
+  const [isLiked, setIsLiked] = useState(false); // State of whether the user has liked or not liked the post yet
+
+
+  
+  const HandlePressComment = () => {
+    console.log('View comments pressed.');
+    navigation.navigate('Comments');
+  }
+
+  const handleLike = () => {
+    if (!isLiked) {
+      setNumLikes(numLikes + 1); // Add a like
+      setIsLiked(true); // Post has already been liked, therefore can't be liked again
+    }
+
+    else {
+      setNumLikes(numLikes - 1); // Takeaway a like
+      setIsLiked(false); // Post has already been liked, therefore can be unliked
+    }
+
+  };
 
   return (
     <View style={styles.container}>
@@ -17,8 +43,12 @@ export default function Post({ profilePic, username, photos, likes }) {
           <Image key={index} source={photo} style={styles.photo} />
         ))}
       </View>
+      <View style={styles.buttonView}>
+        <IconButton icon={props => <Icon name="cards-heart-outline" {...props} onPress={handleLike}/>} />
+        <IconButton icon={props => <Icon name="comment-outline" {...props} onPress={HandlePressComment}/>} />
+      </View>
       <View style={styles.likesContainer}>
-        <Text style={styles.likes}>{likes} likes</Text>
+        <Text style={styles.likes}>{numLikes} likes</Text>
       </View>
       <TouchableOpacity style={styles.commentsButton} onPress={() => setShowComments(!showComments)}>
         <Text style={styles.commentsButtonText}>View comments</Text>
@@ -64,6 +94,9 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     marginRight: 5,
     marginBottom: 5,
+  },
+  buttonView: {
+    flexDirection: 'row'
   },    
   likesContainer: {
     marginVertical: 5,

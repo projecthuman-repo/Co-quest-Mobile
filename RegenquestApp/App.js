@@ -4,6 +4,7 @@ import BottomNavBar from './components/NavBar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import NewPost from './components/NewPost';
+import CommentsView from './components/Comments';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="RegenQuest" component={BottomNavBar}></Stack.Screen>
         <Stack.Screen name="NewPost" component={NewPost}></Stack.Screen>
+        <Stack.Screen name="Comments" component={CommentsView}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

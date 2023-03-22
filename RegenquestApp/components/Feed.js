@@ -6,6 +6,7 @@ import NewPost from './NewPost';
 import Post from './Post'
 import postImage from '../assets/postImage1.png';
 import { ScrollView } from 'react-native-gesture-handler';
+import { IconButton } from '@react-native-material/core';
 
 
 const Feed = ({ navigation }) => {
@@ -19,11 +20,10 @@ const Feed = ({ navigation }) => {
         setSearchQuery(query); // Set the search input the useState variable
     };
     
-    const handleButtonPress = () => { // const to handle the "New Post" action
+    const handlePostButtonPress = () => { // const to handle the "New Post" action
         console.log('New Post button pressed');
         navigation.navigate('NewPost') // Navigates to the NewPost.js component
       };
-
 
     const post = {
       id: 1,
@@ -74,7 +74,7 @@ const Feed = ({ navigation }) => {
                 onChangeText={handleSearch}
                 value={searchQuery}
                 />
-                <Button title="New Post" onPress={handleButtonPress} style={{ marginRight: 10 }} />
+                <Button title="New Post" onPress={handlePostButtonPress} style={{ marginRight: 10 }} />
         </View>
         <Text>
             This is the feed section
@@ -87,6 +87,7 @@ const Feed = ({ navigation }) => {
             photos={post.photos}
             likes={post.likes}
             comments={post.comments}
+            navigation={navigation}
           >
           </Post>
         </ScrollView>
