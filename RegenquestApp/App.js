@@ -12,6 +12,7 @@ import OptInCode from './screens/OptInCode';
 import Bio from './screens/Bio';
 import ConnectSocial from './screens/ConnectSocialMedia';
 import ProfilePic from './screens/ProfilePic';
+import HeaderPic from './screens/HeaderCreation';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Bio" component={Bio}></Stack.Screen>
         <Stack.Screen name='Connect' component={ConnectSocial}></Stack.Screen>
         <Stack.Screen name='PFP' component={ProfilePic}></Stack.Screen>
+        <Stack.Screen name='Header' component={HeaderPic}></Stack.Screen>
 
       </Stack.Navigator>
     </NavigationContainer>
