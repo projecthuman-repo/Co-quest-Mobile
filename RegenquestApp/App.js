@@ -16,6 +16,7 @@ import HeaderPic from './screens/HeaderCreation';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import UserGroup from './screens/UserGroup';
 import Interests from './screens/Interests';
+import LayersPage from './screens/LayersPage';
 
 const client = new ApolloClient({
   uri: 'https://my-gateway-1njig8y6.uc.gateway.dev/regenquest',
@@ -48,6 +49,7 @@ export default function App() {
           <Stack.Screen name='Header' component={HeaderPic}></Stack.Screen>
           <Stack.Screen name='UserGroup' component={UserGroup}></Stack.Screen>
           <Stack.Screen name='Interests' component={Interests}></Stack.Screen>
+          <Stack.Screen name='LayersPage' component={LayersPage}></Stack.Screen>
 
         </Stack.Navigator>
       </NavigationContainer>

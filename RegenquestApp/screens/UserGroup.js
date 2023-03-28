@@ -27,39 +27,50 @@ function UserGroup({ navigation }) {
                         <Text style={[styles.tagline, { marginTop: '10%', fontSize: '18' }]}>Select all that apply.</Text>
                         <View style={{ marginTop: '5%', }}>
                             <TouchableOpacity style={[styles.iconContainer, {
-                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%', shadowColor: 'black',
+                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%',
+                                backgroundColor: 'white',
+                                shadowColor: 'black',
                                 shadowOffset: { width: 0, height: 1 },
                                 shadowOpacity: 0.3,
                                 shadowRadius: 5,
                                 elevation: 3,
+                                borderWidth: 0,
                             }]}>
                                 <Text style={[styles.back, { fontWeight: '600', }]}>Volunteer</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={[styles.iconContainer, {
-                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%', shadowColor: 'black',
+                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%',
+                                backgroundColor: 'white',
+                                shadowColor: 'black',
                                 shadowOffset: { width: 0, height: 1 },
                                 shadowOpacity: 0.3,
                                 shadowRadius: 5,
                                 elevation: 3,
+                                borderWidth: 0,
                             }]}>
                                 <Text style={[styles.back, { fontWeight: '600', }]}>Create a project</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={[styles.iconContainer, {
-                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%', shadowColor: 'black',
+                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%',
+                                backgroundColor: 'white',
+                                shadowColor: 'black',
                                 shadowOffset: { width: 0, height: 1 },
                                 shadowOpacity: 0.3,
                                 shadowRadius: 5,
                                 elevation: 3,
+                                borderWidth: 0,
                             }]}>
                                 <Text style={[styles.back, { fontWeight: '600', }]}>Organize a community</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={[styles.iconContainer, {
-                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%', shadowColor: 'black',
-                                shadowOffset: { width: 0, height: 2 },
+                                flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '5%', height: '15%',
+                                backgroundColor: 'white',
+                                shadowColor: 'black',
+                                shadowOffset: { width: 0, height: 1 },
                                 shadowOpacity: 0.3,
                                 shadowRadius: 5,
                                 elevation: 3,
-
+                                borderWidth: 0,
                             }]}>
                                 <Text style={[styles.back, { fontWeight: '600', }]}>Spectate</Text>
                             </TouchableOpacity>

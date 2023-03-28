@@ -8,35 +8,23 @@ import { Ionicons } from '@expo/vector-icons';
 import handlePress from '../components/handlePress';
 import { FontAwesome } from '@expo/vector-icons';
 
-import InterestButton from '../components/InterestButton';
+import Layer from '../components/Layer';
 
 
 // hard coded rn will change after i figure out api stuff !
 
-const interests = [
+const layers = [
     { title: 'Topic name' },
     { title: 'Sports' },
     { title: 'Arts' },
     { title: 'Music' },
-    { title: 'Generative Art' },
-    { title: 'Arts' },
-    { title: 'Music' },
-    { title: 'Basketball' },
-    { title: 'Generative Art' },
-    { title: 'Arts' },
-    { title: 'Music' },
-    { title: 'Sports' },
-    { title: 'Arts' },
-    { title: 'Music' },
-    { title: 'Arts' },
-    { title: 'Music' },
-    { title: 'Basketball' },
+
 
     // Add more interests here...
 ];
 
 
-function Interests({ navigation }) {
+function LayersPage({ navigation }) {
 
     const handleBack = () => navigation.goBack();
     const handleSkip = handlePress('LayersPage', navigation);
@@ -50,16 +38,16 @@ function Interests({ navigation }) {
                 <View style={{ flex: 1, width: '90%', }}>
                     <View style={{ flex: 2, justifyContent: 'flex-start', padding: '4%', marginTop: '30%', }}>
                         <Text style={[styles.heading]}>Let’s get you stitched in.</Text>
-                        <Text style={[styles.tagline, { marginTop: '10%', }]}>What are your interests?</Text>
-                        <Text style={[styles.tagline, { marginTop: '5%', fontSize: '18' }]}>Select 3 or more.</Text>
+                        <Text style={[styles.tagline, { marginTop: '10%', }]}>Check out these layers!</Text>
+                        <Text style={[styles.tagline, { marginTop: '5%', fontSize: '13' }]}>Layers are small communities with like-minded people. You can participate in group activities and projects here.</Text>
 
-                        <View style={{ display: 'flex', marginTop: '5%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
-                            {interests.map((interest, index) => (
-                                <InterestButton
+                        <View style={{ flexDirection: 'column', justifyContent: 'left', marginTop: '5%' }}>
+                            {layers.map((layer, index) => (
+                                <Layer
                                     key={index}
-                                    title={interest.title}
-                                    color={interest.color}
-                                    textColor={interest.textColor}
+                                    title={layer.title}
+                                    color={layer.color}
+                                    textColor={layer.textColor}
                                 />
                             ))}
 
@@ -78,12 +66,9 @@ function Interests({ navigation }) {
 
 
                             <View style={{ width: '50%', marginTop: '5%' }}>
-                                <Button title="Next" color="#26A5E7" textColor="white" onPress={handleContinue} />
+                                <Button title="Finish" color="#26A5E7" textColor="white" onPress={handleContinue} />
                             </View>
 
-                            <TouchableOpacity onPress={handleSkip}>
-                                <Text style={[styles.back, { marginRight: 20 }]}>Skip</Text>
-                            </TouchableOpacity>
                         </View>
                     </View>
                 </View >
@@ -93,4 +78,4 @@ function Interests({ navigation }) {
     );
 }
 
-export default Interests;
+export default LayersPage;
