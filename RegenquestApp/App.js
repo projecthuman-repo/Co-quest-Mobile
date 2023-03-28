@@ -13,30 +13,44 @@ import Bio from './screens/Bio';
 import ConnectSocial from './screens/ConnectSocialMedia';
 import ProfilePic from './screens/ProfilePic';
 import HeaderPic from './screens/HeaderCreation';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import UserGroup from './screens/UserGroup';
+import Interests from './screens/Interests';
+
+const client = new ApolloClient({
+  uri: 'https://my-gateway-1njig8y6.uc.gateway.dev/regenquest',
+  cache: new InMemoryCache()
+});
 
 const Stack = createStackNavigator();
 
 export default function App() {
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="Initial" component={Initial}></Stack.Screen>
-        <Stack.Screen name="Signup" component={Signup}></Stack.Screen>
-        <Stack.Screen name="Login" component={Login}></Stack.Screen>
-        <Stack.Screen name="2Fa" component={PhoneVerification}></Stack.Screen>
-        <Stack.Screen name="Confirmation" component={EmailVertification}></Stack.Screen>
-        <Stack.Screen name="PhoneOptIn" component={PhoneOptIn}></Stack.Screen>
-        <Stack.Screen name="Code" component={OptInCode}></Stack.Screen>
-        <Stack.Screen name="Bio" component={Bio}></Stack.Screen>
-        <Stack.Screen name='Connect' component={ConnectSocial}></Stack.Screen>
-        <Stack.Screen name='PFP' component={ProfilePic}></Stack.Screen>
-        <Stack.Screen name='Header' component={HeaderPic}></Stack.Screen>
 
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ApolloProvider client={client}>
+
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen name="Initial" component={Initial}></Stack.Screen>
+          <Stack.Screen name="Signup" component={Signup}></Stack.Screen>
+          <Stack.Screen name="Login" component={Login}></Stack.Screen>
+          <Stack.Screen name="2Fa" component={PhoneVerification}></Stack.Screen>
+          <Stack.Screen name="Confirmation" component={EmailVertification}></Stack.Screen>
+          <Stack.Screen name="PhoneOptIn" component={PhoneOptIn}></Stack.Screen>
+          <Stack.Screen name="Code" component={OptInCode}></Stack.Screen>
+          <Stack.Screen name="Bio" component={Bio}></Stack.Screen>
+          <Stack.Screen name='Connect' component={ConnectSocial}></Stack.Screen>
+          <Stack.Screen name='PFP' component={ProfilePic}></Stack.Screen>
+          <Stack.Screen name='Header' component={HeaderPic}></Stack.Screen>
+          <Stack.Screen name='UserGroup' component={UserGroup}></Stack.Screen>
+          <Stack.Screen name='Interests' component={Interests}></Stack.Screen>
+
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ApolloProvider>
   );
 };

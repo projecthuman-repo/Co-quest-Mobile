@@ -19,7 +19,7 @@ function HeaderPic({ navigation }) {
         setHasSelectedHeaderPic(true);
         navigation.navigate('Login');
     };
-    const handleContinue = () => navigation.navigate('Login');
+    const handleContinue = () => navigation.navigate('UserGroup');
 
     const pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
