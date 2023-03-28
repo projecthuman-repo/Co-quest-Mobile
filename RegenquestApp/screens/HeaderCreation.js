@@ -17,7 +17,7 @@ function HeaderPic({ navigation }) {
     const handleBack = () => navigation.goBack();
     const handleSkip = () => {
         setHasSelectedHeaderPic(true);
-        navigation.navigate('Login');
+        navigation.navigate('UserGroup');
     };
     const handleContinue = () => navigation.navigate('UserGroup');
 

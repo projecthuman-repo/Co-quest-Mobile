@@ -11,8 +11,8 @@ import { FontAwesome } from '@expo/vector-icons';
 
 function UserGroup({ navigation }) {
 
-    const handleBack = handlePress('Login', navigation);
-    const handleSkip = handlePress('PFP', navigation);
+    const handleBack = () => navigation.goBack();
+    const handleSkip = handlePress('Interests', navigation);
     const handleContinue = handlePress('Interests', navigation);
 
     return (

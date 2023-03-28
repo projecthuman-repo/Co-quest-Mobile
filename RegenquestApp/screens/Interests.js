@@ -38,7 +38,7 @@ const interests = [
 
 function Interests({ navigation }) {
 
-    const handleBack = handlePress('Login', navigation);
+    const handleBack = () => navigation.goBack();
     const handleSkip = handlePress('PFP', navigation);
     const handleContinue = handlePress('PFP', navigation);
 
