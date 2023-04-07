@@ -5,7 +5,7 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import DropDownPicker from 'react-native-dropdown-picker';
 import * as ImagePicker from 'expo-image-picker';
 import {Camera, CameraType} from 'expo-camera';
-
+import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 
 export default function NewPost() {
   // Initialize const variables
@@ -23,6 +23,20 @@ export default function NewPost() {
   const [photo, setPhoto] = useState(null); // Stores the photo taken by the camera
   const [photoTaken, setPhotoTaken] = useState(null); // Checks to see whether a photo was taken or not
   const [savePhoto, setSavePhoto] = useState(null); // Checks to see whether user wants to continue with photo or not
+  const audioRecorderPlayer = new AudioRecorderPlayer();
+  const [recording, setRecording] = useState(false);
+  const [audioFile, setAudioFile] = useState('');
+
+  const handleRecordPress = async () => {
+    if (recording) {
+      const result = await audioRecorderPlayer.stopRecorder();
+      setRecording(false);
+      setAudioFile(result);
+    } else {
+      const result = await audioRecorderPlayer.startRecorder();
+      setRecording(true);
+    }
+  }
 
   const launchGallery = async () => { // Function used to open the user's gallery
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -80,7 +94,7 @@ export default function NewPost() {
 
   return (
     <View>
-      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }} >
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10, marginLeft: 20, }} >
         <Icon name="account-circle" size={40} style={{ borderRadius: 25, marginRight: 10}}></Icon>
         <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Username</Text>
       </View>
@@ -117,7 +131,7 @@ export default function NewPost() {
       <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 40 }}>
         <IconButton icon={props => <Icon name="camera" {...props} />} onPress={toggleCameraModal}/>
         <IconButton icon={props => <Icon name="image-plus" {...props}/>} onPress={launchGallery}/>
-        <IconButton icon={props => <Icon name="microphone" {...props} />} />
+        <IconButton icon={props => <Icon name="microphone" {...props} />} onPress={handleRecordPress}/>
         <IconButton icon={props => <Icon name="account-multiple-plus" {...props} />} />
         <IconButton icon={props => <Icon name="map" {...props} />} />
         <IconButton icon={props => <Icon name="share" {...props} />} />
