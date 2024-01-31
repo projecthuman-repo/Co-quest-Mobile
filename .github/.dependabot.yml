@@ -1,0 +1,14 @@
+# Automatic Periodic Package Upgrade Provisioning
+
+version: 2
+updates:
+  package-ecosystem: "npm"
+  directory: "/RegenquestApp"
+  schedule:
+    interval: "weekly"
+    # The time in which GitHub dispatches Dependabot is indeterminate by default
+    # Thus, expliciting setting the time ensures consistent operation
+    time: "00:00"
+  commit-message:
+    prefix: "[Dependabot]"
+  open-pull-requests-limit: 3
